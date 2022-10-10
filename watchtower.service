@@ -1,0 +1,14 @@
+[Unit]
+Description= Solana Watchtower
+After=network.target
+
+[Service]
+Restart=on-failure
+RestartSec=60
+User=sol
+Environment=PATH=/bin:/usr/bin:/home/sol/.local/share/solana/install/active_release/bin
+Environment=DISCORD_WEBHOOK=
+ExecStart=/home/sol/start-watchtower.sh
+
+[Install]
+WantedBy=multi-user.target
