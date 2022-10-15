@@ -1,0 +1,14 @@
+proc /proc proc defaults 0 0
+# /dev/nvme0n1p1
+UUID=5d78fd21-526f-4795-828c-51a3c49315f0 none swap sw 0 0
+# /dev/nvme0n1p2
+UUID=59239246-36ca-48b9-a2f9-de00a9ec05b7 /boot ext3 defaults 0 0
+# /dev/nvme0n1p3
+UUID=920eb4de-be96-4903-a826-89dfead069af / ext4 defaults 0 0
+# /dev/nvme0n1p4
+UUID=0b5fa8c4-9048-47f7-a147-3823f6b5ddbe /home ext4 defaults 0 0
+# /dev/nvme1n1p1
+UUID=c533728f-6c78-4835-b66a-43a87b3077be none swap sw 0 0
+# /dev/nvme1n1p2
+UUID=698d5a91-3dfb-491d-a4dc-112f8352d65b /mnt/solana ext4 defaults 0 0
+tmpfs /home/sol/solana-accounts tmpfs rw,noexec,nodev,nosuid,noatime,size=32G,user=sol 0 0
