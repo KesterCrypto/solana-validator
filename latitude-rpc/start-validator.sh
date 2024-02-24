@@ -1,0 +1,21 @@
+#!/bin/bash
+exec solana-validator \
+ --entrypoint entrypoint.testnet.solana.com:8001 \
+ --entrypoint entrypoint2.testnet.solana.com:8001 \
+ --entrypoint entrypoint3.testnet.solana.com:8001 \
+ --known-validator 5D1fNXzvv5NjV1ysLjirC4WY92RNsVH18vjmcszZd8on \
+ --known-validator dDzy5SR3AXdYWVqbDEkVFdvSPCtS9ihF5kJkHCtXoFs \
+ --known-validator eoKpUABi59aT4rR9HGS3LcMecfut9x7zJyodWWP43YQ \
+ --expected-genesis-hash 4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQawwpjk2NsNY \
+ --dynamic-port-range 8000-8020 \
+ --rpc-port 8899 \
+ --only-known-rpc \
+ --wal-recovery-mode skip_any_corrupted_record \
+ --identity ~/validator-keypair.json \
+ --vote-account ~/vote-account-keypair.json \
+ --log ~/log/validator.log \
+ --accounts /mnt/solana-accounts \
+ --ledger /mnt/ledger \
+ --limit-ledger-size \
+ --no-voting \
+ --full-rpc-api \
