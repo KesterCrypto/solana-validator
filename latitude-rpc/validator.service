@@ -1,0 +1,17 @@
+[Unit]
+Description=Solana Validator
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=1
+LimitNOFILE=1000000
+LogRateLimitIntervalSec=0
+User=ubuntu
+Environment=PATH=/bin:/usr/bin:/home/ubuntu/.local/share/solana/install/active_release/bin
+ExecStart=/home/ubuntu/start-validator.sh
+
+[Install]
+WantedBy=multi-user.target
